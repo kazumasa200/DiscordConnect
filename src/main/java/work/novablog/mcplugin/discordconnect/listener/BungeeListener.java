@@ -70,21 +70,21 @@ public class BungeeListener implements Listener {
     public void onLogin(LoginEvent e) {
         botManager.sendMessageToChannel(
                 BotManager.ChannelType.CHAT,
-                Message.userActivity.toString(),
                 null,
-                Message.joined.toString().replace("{name}", e.getConnection().getName()),
+                null,
+                null,
                 Color.GREEN,
                 new ArrayList<>(),
-                null,
-                null,
-                null,
-                null,
-                null,
+                Message.joined.toString().replace("{name}", e.getConnection().getName()),
                 null,
                 AVATAR_IMG_URL.replace(
                         "{uuid}",
                         e.getConnection().getUniqueId().toString().replace("-", "")
-                )
+                ),
+                null,
+                null,
+                null,
+                null
         );
 
         updatePlayerCount();
@@ -94,21 +94,21 @@ public class BungeeListener implements Listener {
     public void onLogout(PlayerDisconnectEvent e) {
         botManager.sendMessageToChannel(
                 BotManager.ChannelType.CHAT,
-                Message.userActivity.toString(),
                 null,
-                Message.left.toString().replace("{name}", e.getPlayer().getName()),
+                null,
+                null,
                 Color.RED,
                 new ArrayList<>(),
-                null,
-                null,
-                null,
-                null,
-                null,
+                Message.left.toString().replace("{name}", e.getPlayer().getName()),
                 null,
                 AVATAR_IMG_URL.replace(
                         "{uuid}",
                         e.getPlayer().getUniqueId().toString().replace("-", "")
-                )
+                ),
+                null,
+                null,
+                null,
+                null
         );
 
         updatePlayerCount();
@@ -120,23 +120,23 @@ public class BungeeListener implements Listener {
 
         botManager.sendMessageToChannel(
                 BotManager.ChannelType.CHAT,
-                Message.userActivity.toString(),
                 null,
+                null,
+                null,
+                Color.CYAN,
+                new ArrayList<>(),
                 Message.serverSwitched.toString()
                         .replace("{name}", e.getPlayer().getName())
                         .replace("{server}", e.getPlayer().getServer().getInfo().getName()),
-                Color.CYAN,
-                new ArrayList<>(),
-                null,
-                null,
-                null,
-                null,
-                null,
                 null,
                 AVATAR_IMG_URL.replace(
                         "{uuid}",
                         e.getPlayer().getUniqueId().toString().replace("-", "")
-                )
+                ),
+                null,
+                null,
+                null,
+                null
         );
     }
 
